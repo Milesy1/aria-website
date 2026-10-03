@@ -3,17 +3,31 @@ import { useEffect, useRef } from 'react';
 
 export default function Cursor() {
   const dotRef = useRef<HTMLDivElement>(null);
-  const tx = useRef(0);
-  const ty = useRef(0);
+  const tx = useRef(-100);
+  const ty = useRef(-100);
+  const visible = useRef(false);
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
       tx.current = e.clientX;
       ty.current = e.clientY;
+      if (!visible.current && dotRef.current) {
+        dotRef.current.style.opacity = '0.5';
+        visible.current = true;
+      }
     };
-    window.addEventListener('mousemove', onMove);
+    const onLeave = () => {
+      if (dotRef.current) dotRef.current.style.opacity = '0';
+    };
+    const onEnter = () => {
+      if (dotRef.current) dotRef.current.style.opacity = '0.5';
+    };
 
-    let x = 0, y = 0, raf: number;
+    window.addEventListener('mousemove', onMove);
+    document.documentElement.addEventListener('mouseleave', onLeave);
+    document.documentElement.addEventListener('mouseenter', onEnter);
+
+    let x = -100, y = -100, raf: number;
     const tick = () => {
       x += (tx.current - x) * 0.55;
       y += (ty.current - y) * 0.55;
@@ -26,6 +40,8 @@ export default function Cursor() {
 
     return () => {
       window.removeEventListener('mousemove', onMove);
+      document.documentElement.removeEventListener('mouseleave', onLeave);
+      document.documentElement.removeEventListener('mouseenter', onEnter);
       cancelAnimationFrame(raf);
     };
   }, []);
@@ -41,10 +57,10 @@ export default function Cursor() {
         height: 8,
         borderRadius: '50%',
         background: 'var(--text)',
-        opacity: 0.35,
+        opacity: 0,
         pointerEvents: 'none',
         zIndex: 9999,
-        mixBlendMode: 'multiply',
+        transition: 'opacity 0.2s',
       }}
     />
   );
