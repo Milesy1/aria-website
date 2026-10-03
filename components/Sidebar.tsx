@@ -27,7 +27,6 @@ export default function Sidebar() {
   const smoothProgress = useRef(0);
   const rafId = useRef<number>(0);
 
-  // Lerp progress — write directly to DOM ref, no state
   useEffect(() => {
     const onScroll = () => {
       const doc = document.documentElement;
@@ -50,7 +49,6 @@ export default function Sidebar() {
     };
   }, []);
 
-  // Scroll spy
   useEffect(() => {
     const handleScroll = () => {
       const ids = links.map(l => l.href.slice(1));
@@ -93,6 +91,9 @@ export default function Sidebar() {
           {l.label}
         </a>
       ))}
+      <a href="/blog" style={{ marginTop: 8, opacity: 0.6, fontSize: 12 }}>
+        Blog
+      </a>
     </>
   );
 
@@ -101,7 +102,6 @@ export default function Sidebar() {
       <aside className="sidebar">
         <a href="#hero" className="sidebar-logo">Aria<span>.</span></a>
 
-        {/* Progress line — 1px wide, absolutely positioned, pointer-events none */}
         <div ref={trackRef} style={{
           position: 'absolute',
           left: 14,
@@ -152,7 +152,9 @@ export default function Sidebar() {
       {mobileOpen && (
         <div className="mobile-overlay" onClick={() => setMobileOpen(false)}>
           <div ref={menuRef} className="mobile-menu" onClick={e => e.stopPropagation()}>
-            <nav className="mobile-nav"><NavLinks onClick={() => setMobileOpen(false)} /></nav>
+            <nav className="mobile-nav">
+              <NavLinks onClick={() => setMobileOpen(false)} />
+            </nav>
             <div style={{ padding: '24px 28px', borderTop: '1px solid var(--border)' }}>
               <a href="#contact" className="btn-primary" onClick={() => setMobileOpen(false)}>Get in touch</a>
             </div>

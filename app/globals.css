@@ -647,3 +647,8 @@ p {
   transition: color 0.15s;
 }
 .footer-link:hover { color: var(--text); }
+
+
+/* ── Blog body ────────────────────────── */
+.blog-body p { font-size: 15px; line-height: 1.85; color: var(--text); margin-bottom: 24px; }
+.blog-body h2 { font-size: 18px; font-weight: 500; color: var(--text); margin-top: 48px; margin-bottom: 16px; }

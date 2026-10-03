@@ -20,6 +20,7 @@ const mono = JetBrains_Mono({
 });
 
 const BASE_URL = "https://aria.mileswaite.net";
+const GA_ID = "G-XXXXXXXXXX"; // Replace with your GA4 Measurement ID
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -179,6 +180,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {GA_ID !== "G-XXXXXXXXXX" && (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+            <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');` }} />
+          </>
+        )}
       </head>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
