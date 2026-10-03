@@ -4,7 +4,8 @@ import { useTheme } from "./ThemeProvider";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const { dark, toggle } = useTheme();
+  const { theme, toggle } = useTheme();
+  const dark = theme === 'dark';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -35,7 +36,6 @@ export default function Nav() {
       </ul>
 
       <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-        {/* Theme toggle */}
         <button onClick={toggle}
           title={dark ? "Switch to light (L)" : "Switch to dark (D)"}
           style={{ background: "transparent", border: "1px solid var(--border2)", borderRadius: 6, padding: "6px 10px", cursor: "pointer", fontSize: 13, color: "var(--muted)", fontFamily: "var(--font-mono)", transition: "all 0.15s", letterSpacing: "0.05em" }}
