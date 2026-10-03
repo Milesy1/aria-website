@@ -6,16 +6,23 @@ export const metadata: Metadata = {
   description: 'A technical account of how confidence gating, write-back loops, and hybrid retrieval produce a self-improving invoice coding system without ongoing PS engagement.',
 };
 
+const POST_URL = 'https://aria.mileswaite.net/blog/ap-automation';
+const POST_TITLE = 'How to achieve 99%25 AP automation without professional services';
+
+const shareLinks = [
+  { label: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(POST_URL)}` },
+  { label: 'X / Twitter', href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(POST_URL)}&text=${POST_TITLE}` },
+  { label: 'Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(POST_URL)}` },
+];
+
 export default function APAutomationPost() {
   return (
     <div style={{ maxWidth: 680, margin: '0 auto', padding: '80px 40px' }}>
 
-      {/* Back */}
       <Link href="/blog" style={{ fontSize: 12, color: 'var(--dim)', fontFamily: 'var(--font-mono)', textDecoration: 'none', letterSpacing: '0.06em' }}>
         ← Blog
       </Link>
 
-      {/* Header */}
       <div style={{ marginTop: 48, marginBottom: 56 }}>
         <div style={{ display: 'flex', gap: 16, marginBottom: 20 }}>
           <span style={{ fontSize: 11, color: 'var(--dim)', fontFamily: 'var(--font-mono)' }}>3 October 2026</span>
@@ -27,7 +34,6 @@ export default function APAutomationPost() {
         </h1>
       </div>
 
-      {/* Body */}
       <div className="blog-body">
 
         <p>Most accounts payable automation products require a professional services engagement to configure coding rules, maintain them as vendor behaviour changes, and recalibrate when accuracy degrades. This is not a limitation of the technology — it is a consequence of how the systems are designed. Rule-based and static ML approaches have no mechanism for self-correction. Every new vendor, cost centre change, or coding policy update requires manual intervention.</p>
@@ -92,8 +98,22 @@ export default function APAutomationPost() {
 
       </div>
 
-      {/* Footer */}
       <div style={{ marginTop: 80, paddingTop: 32, borderTop: '1px solid var(--border)' }}>
+        <p style={{ fontSize: 11, color: 'var(--dim)', fontFamily: 'var(--font-mono)', marginBottom: 16, letterSpacing: '0.06em' }}>SHARE</p>
+        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 32 }}>
+          {shareLinks.map(s => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+              style={{ fontSize: 12, padding: '7px 14px', border: '1px solid var(--border2)', borderRadius: 4, fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
         <Link href="/" style={{ fontSize: 13, color: 'var(--muted)', textDecoration: 'none' }}>
           aria.mileswaite.net →
         </Link>

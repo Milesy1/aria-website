@@ -21,7 +21,7 @@ export default function Hero() {
 
         <h1 style={{ marginBottom: 32, lineHeight: 1.1 }}>
           AI systems that work.<br />
-          <span style={{ fontSize: 'clamp(24px, 3vw, 48px)', fontWeight: 300, color: 'var(--muted)', fontStyle: 'normal' }}>
+          <span style={{ fontSize: 'clamp(24px, 3vw, 48px)', fontWeight: 300, color: 'var(--muted)' }}>
             <em style={{ fontStyle: 'italic' }}>AI systems that you can trust:</em>{' '}
             deployed, governed, verified.
           </span>
