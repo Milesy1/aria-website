@@ -8,6 +8,7 @@ const inter = Inter({
   variable: "--font-inter",
   weight: ["300", "400", "500"],
   display: "swap",
+  preload: false,
 });
 
 const mono = JetBrains_Mono({
@@ -15,6 +16,7 @@ const mono = JetBrains_Mono({
   variable: "--font-mono",
   weight: ["400", "500"],
   display: "swap",
+  preload: false,
 });
 
 const BASE_URL = "https://aria.mileswaite.net";
