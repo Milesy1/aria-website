@@ -21,18 +21,19 @@ const mono = JetBrains_Mono({
 });
 
 const BASE_URL = "https://aria.mileswaite.net";
-const GA_ID = "G-H8DFHKXRNS";
+const GA_ID = "G-QTEG0Y1HSC";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Aria — Self-learning AP Automation, RAG & Agentic AI for Enterprise Finance",
+    default: "Aria — Production AI Systems, Engineered for Trust",
     template: "%s | Aria",
   },
-  description: "Aria builds self-learning AI systems for enterprise finance operations: AP automation with RAG and confidence gating, multi-tenant RAG knowledge assistants, agentic ERP automation with human-in-the-loop governance, and domain-specific LLM fine-tuning. Deployed, governed, verified.",
+  description: "Governed, evaluated, observable AI — built for finance, commodities, energy trading, and any operation where a wrong answer costs real money.",
   keywords: [
-    "AP automation AI", "non-PO invoice coding", "agentic ERP automation",
-    "RAG knowledge assistant enterprise", "LLM fine-tuning finance", "AI engineer UK",
+    "production AI systems", "commodities", "energy trading", "enterprise operations",
+    "AP automation AI", "non-PO invoice coding", "agentic systems",
+    "RAG knowledge assistant enterprise", "LLM fine-tuning", "AI engineer UK",
     "invoice coding automation", "hybrid retrieval RAG", "LangGraph agent",
     "human in the loop AI", "Qdrant vector store", "Langfuse observability",
     "enterprise AI systems", "governed AI", "self-learning AI",
@@ -44,15 +45,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: BASE_URL,
-    title: "Aria — Self-learning AP Automation, RAG & Agentic AI for Enterprise Finance",
-    description: "Self-learning AI systems for enterprise finance operations. AP automation, RAG knowledge assistants, agentic ERP automation, LLM fine-tuning. Deployed, governed, verified.",
+    title: "Aria — Production AI Systems, Engineered for Trust",
+    description: "Governed, evaluated, observable AI — built for finance, commodities, energy trading, and any operation where a wrong answer costs real money.",
     siteName: "Aria",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Aria — Self-learning AI systems for enterprise finance" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Aria — Production AI systems, engineered for trust" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aria — Self-learning AP Automation, RAG & Agentic AI for Enterprise Finance",
-    description: "Self-learning AI systems for enterprise finance. AP automation, RAG assistants, agentic ERP, LLM fine-tuning. Deployed, governed, verified.",
+    title: "Aria — Production AI Systems, Engineered for Trust",
+    description: "Governed, evaluated, observable AI — built for finance, commodities, energy trading, and any operation where a wrong answer costs real money.",
     images: ["/og.png"],
   },
   robots: {
@@ -70,7 +71,7 @@ const jsonLd = {
       "@id": `${BASE_URL}/#organization`,
       name: "Aria",
       url: BASE_URL,
-      description: "Aria builds self-learning AI systems for enterprise finance operations — AP automation, RAG knowledge assistants, agentic ERP automation, and domain-specific LLM fine-tuning.",
+      description: "Governed, evaluated, observable AI — built for finance, commodities, energy trading, and any operation where a wrong answer costs real money.",
       foundingDate: "2024",
       founder: {
         "@type": "Person",
@@ -81,12 +82,11 @@ const jsonLd = {
       },
       address: { "@type": "PostalAddress", addressLocality: "Bingham", addressRegion: "Nottinghamshire", addressCountry: "GB" },
       areaServed: { "@type": "Country", name: "United Kingdom" },
-      knowsAbout: ["Accounts Payable Automation", "Retrieval-Augmented Generation", "Agentic AI Systems", "LLM Fine-tuning", "Enterprise AI Engineering", "LangGraph", "Qdrant", "Langfuse", "Human-in-the-loop AI"],
+      knowsAbout: ["Accounts Payable Automation", "Retrieval-Augmented Generation", "Agentic AI Systems", "LLM Fine-tuning", "Enterprise AI Engineering", "Energy Trading", "Commodities", "LangGraph", "Qdrant", "Langfuse", "Human-in-the-loop AI"],
       offers: [
-        { "@type": "Offer", name: "AP Automation", description: "Self-learning non-PO invoice coding with RAG retrieval, confidence gating, and write-back loop. 99% automation rate, 0% false positives." },
+        { "@type": "Offer", name: "Enterprise Workflow Automation", description: "Self-learning non-PO invoice coding with RAG retrieval, confidence gating, and write-back loop. 99% automation rate, 0% false positives." },
         { "@type": "Offer", name: "RAG Intelligence", description: "Multi-tenant RAG knowledge assistants with hybrid BM25 + dense retrieval, RAGAS-evaluated, CI-gated. 9.1/10 accuracy, sub-3s latency." },
-        { "@type": "Offer", name: "Agentic ERP Automation", description: "Natural language over live ERP under mandatory human-in-the-loop governance. 90+ tools, semantic MDM, full AP/AR cycle." },
-        { "@type": "Offer", name: "LLM Fine-tuning", description: "Domain-specific model training and eval-driven fine-tuning for finance and enterprise workflows, CI-gated on golden datasets." },
+        { "@type": "Offer", name: "Agentic Systems", description: "Natural language over live systems under mandatory human-in-the-loop governance. ERP is the primary example: 90+ tools, semantic MDM, full AP/AR cycle." },
       ],
     },
     { "@type": "WebSite", "@id": `${BASE_URL}/#website`, url: BASE_URL, name: "Aria", publisher: { "@id": `${BASE_URL}/#organization` } },
@@ -94,10 +94,10 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": `${BASE_URL}/#webpage`,
       url: BASE_URL,
-      name: "Aria — Self-learning AP Automation, RAG & Agentic AI for Enterprise Finance",
+      name: "Aria — Production AI Systems, Engineered for Trust",
       isPartOf: { "@id": `${BASE_URL}/#website` },
       about: { "@id": `${BASE_URL}/#organization` },
-      description: "Aria builds self-learning AI systems for enterprise finance: AP automation, RAG knowledge assistants, agentic ERP automation, and LLM fine-tuning. All governed, evaluated, and production-ready.",
+      description: "Governed, evaluated, observable AI — built for finance, commodities, energy trading, and any operation where a wrong answer costs real money.",
     },
   ],
 };
@@ -121,3 +121,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
