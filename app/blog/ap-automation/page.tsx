@@ -1,11 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import ApExplodedStatic, { staticDiagramOgPath } from '@/components/ApExplodedStatic';
 import { postBySlug } from '@/lib/posts';
+
+const ogImage = staticDiagramOgPath();
 
 export const metadata: Metadata = {
   title: 'How we achieve 99% AP automation without professional services — Aria',
   description: 'A technical account of how confidence gating, write-back loops, and hybrid retrieval produce a self-improving invoice coding system without ongoing PS engagement.',
+  openGraph: ogImage
+    ? { images: [{ url: ogImage, alt: 'Exploded architecture diagram — AP automation' }] }
+    : undefined,
 };
 
 const POST_URL = 'https://aria.mileswaite.net/blog/ap-automation';
@@ -59,6 +65,8 @@ export default function APAutomationPost() {
         <p>Retrieval uses a hybrid BM25 + dense embedding approach with weighted Reciprocal Rank Fusion. BM25 handles exact vendor name and description matches. Dense retrieval handles semantic similarity — catching cases where invoice descriptions vary but refer to the same underlying service.</p>
 
         <p>The retrieved examples are passed to an LLM with a structured prompt that asks it to propose a GL code and confidence score, with explicit reasoning. The model is not being asked to memorise coding rules — it is being asked to generalise from concrete, confirmed examples.</p>
+
+        <ApExplodedStatic />
 
         <h2>Confidence gating</h2>
 

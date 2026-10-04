@@ -1,5 +1,6 @@
 import FadeIn from './FadeIn';
 import ConfidenceGate from './ConfidenceGate';
+import ExplodedDiagram from './ExplodedDiagram';
 
 export default function APAutomation() {
   const metrics = [
@@ -57,6 +58,16 @@ export default function APAutomation() {
             ))}
           </div>
         </FadeIn>
+      </div>
+
+      <div style={{ marginTop: 64 }}>
+        <h3 style={{ fontSize: 22, fontWeight: 400, letterSpacing: '-0.03em', marginBottom: 12 }}>
+          The system, exploded
+        </h3>
+        <p style={{ maxWidth: 560, marginBottom: 20 }}>
+          Governance sits off the request path. The diagram pulls each part away along its own axis.
+        </p>
+        <ExplodedDiagram />
       </div>
 
       <ConfidenceGate />

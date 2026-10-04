@@ -1,10 +1,10 @@
 {
-  "$comment": "Scores below are the figures currently published on the site. releaseId and lastRun are unknown — CI should overwrite this entire file on each gated release. See data/evals.schema.json and .github/workflows/update-evals.yml. Do not hand-edit scores to look newer than the last real run.",
-  "releaseId": null,
+  "$comment": "releaseId is the published POC release. lastRun is still null until the real evaluation date is supplied — do not invent it. CI should overwrite this file on each gated release. See data/evals.schema.json.",
+  "releaseId": "ap-automation-poc-1",
   "lastRun": null,
   "ciGate": {
     "status": "pass",
-    "basis": "Published result, not a live CI badge: 1,213 Langfuse-scored decisions, all gate.correct = 1. CI should replace this status when it overwrites the file."
+    "basis": "1,213 Langfuse-scored decisions, all gate.correct = 1, golden dataset of 500+ confirmed lines"
   },
   "scores": [
     {

@@ -30,7 +30,7 @@ export default function EvalsPage() {
 
         {evals.lastRun === null && (
           <p className="placeholder-note">
-            Placeholder for the run date and release id. Scores are the published numbers. CI should overwrite data/evals.json on each gated release.
+            Last run date is not recorded. Scores and release id are filled. Set lastRun in data/evals.json to the YYYY-MM-DD the golden dataset evaluation ran.
           </p>
         )}
 
