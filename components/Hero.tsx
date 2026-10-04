@@ -47,9 +47,11 @@ export default function Hero() {
         </div>
 
         <p style={{ fontSize: 15, maxWidth: 560, lineHeight: 1.8, marginBottom: 40, color: 'var(--muted)' }}>
-          We build AI systems that write to live ERPs, code non-PO invoices automatically,
+          We build AI systems that write to live ERPs, code invoices automatically,
           and answer enterprise knowledge queries at 9.1/10 RAGAS accuracy —
-          all governed by architecture, all evaluated in CI before they ship.
+          proven in finance operations, built for any domain where an AI decision needs to be right:
+          finance, commodities, energy trading, and beyond.
+          All governed by architecture, all evaluated in CI before they ship.
         </p>
 
         <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
