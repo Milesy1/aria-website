@@ -1,13 +1,19 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Cursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const tx = useRef(-100);
   const ty = useRef(-100);
   const visible = useRef(false);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
+    // Only show on non-touch devices
+    const isTouch = window.matchMedia('(hover: none)').matches;
+    if (isTouch) return;
+    setShow(true);
+
     const onMove = (e: MouseEvent) => {
       tx.current = e.clientX;
       ty.current = e.clientY;
@@ -45,6 +51,8 @@ export default function Cursor() {
       cancelAnimationFrame(raf);
     };
   }, []);
+
+  if (!show) return null;
 
   return (
     <div
