@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Blog — Aria',
-  description: 'Technical writing on AP automation, RAG systems, agentic ERP, and production AI engineering.',
+  description: 'Technical writing on production AI systems for finance operations and other domains where a wrong answer costs real money.',
 };
 
 const posts = [
@@ -18,6 +19,7 @@ const posts = [
 
 export default function BlogIndex() {
   return (
+    <>
     <div style={{ maxWidth: 720, margin: '0 auto', padding: '80px 40px' }}>
       <Link href="/" style={{ fontSize: 12, color: 'var(--dim)', fontFamily: 'var(--font-mono)', textDecoration: 'none', letterSpacing: '0.06em' }}>
         ← aria.mileswaite.net
@@ -25,7 +27,7 @@ export default function BlogIndex() {
 
       <h1 style={{ marginTop: 48, marginBottom: 8, fontSize: 'clamp(28px, 4vw, 40px)' }}>Blog</h1>
       <p style={{ color: 'var(--muted)', marginBottom: 64, fontSize: 14 }}>
-        Technical writing on production AI systems for enterprise finance.
+        Technical writing on production AI systems — finance operations, and other domains where a wrong answer costs real money.
       </p>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
@@ -50,5 +52,7 @@ export default function BlogIndex() {
         <div style={{ borderTop: '1px solid var(--border)', paddingTop: 32 }} />
       </div>
     </div>
+    <Footer />
+    </>
   );
 }

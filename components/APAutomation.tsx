@@ -13,16 +13,17 @@ export default function APAutomation() {
   return (
     <section id="ap-automation" className="section">
       <span className="section-number">03</span>
-      <p className="section-label">AP Automation</p>
+      <p className="section-label">Enterprise Workflow Automation</p>
 
       <div className="two-col">
         <FadeIn>
           <h2 style={{ marginBottom: 24 }}>Self-learning<br />invoice coding</h2>
           <div className="divider" />
           <p style={{ marginBottom: 20 }}>
-            Most AP automation requires professional services to configure and maintain
-            coding rules. Ours learns from every confirmed invoice, compounding accuracy
-            over time without manual intervention.
+            AP invoice coding is the flagship example. Most AP automation requires
+            professional services to configure and maintain coding rules. Ours learns
+            from every confirmed invoice, compounding accuracy over time without
+            manual intervention.
           </p>
           <p style={{ marginBottom: 20 }}>
             The system retrieves historically coded lines for the same vendor and cost
@@ -35,7 +36,7 @@ export default function APAutomation() {
             Zero false positives by design.
           </p>
           <div className="cap-tags" style={{ marginTop: 32 }}>
-            {['RAG retrieval', 'Confidence gating', 'Write-back loop', 'Qdrant',
+            {['RAG retrieval', 'Confidence gating', 'Write-back loop', 'Fine-tuning', 'Qdrant',
               'OpenAI embeddings', 'FastAPI', 'Langfuse tracing'].map(t => (
               <span key={t} className="tag">{t}</span>
             ))}

@@ -3,13 +3,13 @@ import FadeIn from './FadeIn';
 export default function CaseStudy() {
   return (
     <section id="case-study" className="section">
-      <span className="section-number">08</span>
+      <span className="section-number">09</span>
       <p className="section-label">Case study</p>
 
       <div className="two-col" style={{ alignItems: 'start' }}>
         <FadeIn>
           <h2 style={{ marginBottom: 24 }}>
-            From 48-hour batch<br />to same-day automation.
+            Case study: Finance — from 48-hour batch to same-day automation
           </h2>
           <div className="divider" />
           <p style={{ marginBottom: 20 }}>
@@ -18,7 +18,7 @@ export default function CaseStudy() {
             chasing approvals, and reconciling mispostings.
           </p>
           <p style={{ marginBottom: 20 }}>
-            We deployed the AP Automation system against their existing invoice corpus.
+            We deployed enterprise workflow automation against their existing invoice corpus.
             The RAG retrieval layer learned from 1,466 historically coded lines.
             Within the first week, 99% of routine invoices were coded and posted
             automatically — zero false positives, full audit trail.
@@ -31,6 +31,9 @@ export default function CaseStudy() {
         </FadeIn>
 
         <FadeIn delay={120}>
+          <p style={{ marginBottom: 16, fontSize: 14 }}>
+            The methodology below was proven in finance operations. The same approach applies to any domain with structured historical decisions.
+          </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 1, background: 'var(--border)', border: '1px solid var(--border)', borderRadius: 8, overflow: 'hidden' }}>
             {[
               { label: 'Manual processing time', before: '2 days / week', after: '< 2 hours / week', delta: '−94%' },

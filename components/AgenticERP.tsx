@@ -26,8 +26,8 @@ export default function AgenticERP() {
 
   return (
     <section id="erp" className="section">
-      <span className="section-number">05</span>
-      <p className="section-label">Agentic ERP Automation</p>
+      <span className="section-number">06</span>
+      <p className="section-label">Agentic Systems</p>
 
       <FadeIn style={{ maxWidth: 600, marginBottom: 64 }}>
         <h2 style={{ marginBottom: 24 }}>
@@ -36,6 +36,7 @@ export default function AgenticERP() {
         </h2>
         <div className="divider" />
         <p style={{ marginBottom: 20 }}>
+          Live ERP is the primary example — one class of system this layer operates.
           The ARIA middleware enforces approval queues, idempotency, and audit logging
           at the infrastructure layer — so governance is architectural, not prompt-based.
           No amount of prompt injection bypasses a mandatory approval queue.
@@ -61,7 +62,7 @@ export default function AgenticERP() {
         </div>
         <div className="cap-tags" style={{ marginTop: 40 }}>
           {['LangGraph', 'FastAPI', 'Slack Bolt', 'Postgres', 'Redis',
-            'Kubernetes', 'Semantic MDM', 'Langfuse', 'HITL'].map(t => (
+            'Fine-tuning', 'Kubernetes', 'Semantic MDM', 'Langfuse', 'HITL'].map(t => (
             <span key={t} className="tag">{t}</span>
           ))}
         </div>

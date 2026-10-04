@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'How we achieve 99% AP automation without professional services — Aria',
@@ -17,6 +18,7 @@ const shareLinks = [
 
 export default function APAutomationPost() {
   return (
+    <>
     <div style={{ maxWidth: 680, margin: '0 auto', padding: '80px 40px' }}>
 
       <Link href="/blog" style={{ fontSize: 12, color: 'var(--dim)', fontFamily: 'var(--font-mono)', textDecoration: 'none', letterSpacing: '0.06em' }}>
@@ -35,6 +37,8 @@ export default function APAutomationPost() {
       </div>
 
       <div className="blog-body">
+
+        <p>This write-up is a finance operations deployment — non-PO invoice coding. The method is not finance-only. Retrieval over confirmed decisions, confidence gating, and a write-back loop apply wherever historical decisions are structured and a wrong answer costs real money. The metrics and architecture below are from that finance system.</p>
 
         <p>Most accounts payable automation products require a professional services engagement to configure coding rules, maintain them as vendor behaviour changes, and recalibrate when accuracy degrades. This is not a limitation of the technology — it is a consequence of how the systems are designed. Rule-based and static ML approaches have no mechanism for self-correction. Every new vendor, cost centre change, or coding policy update requires manual intervention.</p>
 
@@ -119,5 +123,7 @@ export default function APAutomationPost() {
         </Link>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }

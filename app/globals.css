@@ -342,6 +342,10 @@ p {
 
 .cap-card:hover { background: var(--s2); }
 
+.cap-grid .cap-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .cap-number {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
@@ -639,6 +643,21 @@ p {
   background: var(--s2);
 }
 
+/* ── Footer ───────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .site-footer { padding: 28px 24px; }
+}
+
 /* ── Footer links ─────────────────────── */
 .footer-link {
   font-size: 12px;
@@ -652,3 +671,4 @@ p {
 /* ── Blog body ────────────────────────── */
 .blog-body p { font-size: 15px; line-height: 1.85; color: var(--text); margin-bottom: 24px; }
 .blog-body h2 { font-size: 18px; font-weight: 500; color: var(--text); margin-top: 48px; margin-bottom: 16px; }
+.blog-body a { color: var(--text); text-underline-offset: 3px; }

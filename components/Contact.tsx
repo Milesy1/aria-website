@@ -7,7 +7,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="section" style={{ minHeight: 'auto', paddingTop: 120, paddingBottom: 120 }}>
-      <span className="section-number">10</span>
+      <span className="section-number">13</span>
 
       <div className="two-col" style={{ gap: 80, alignItems: 'start' }}>
         <FadeIn>
@@ -18,23 +18,54 @@ export default function Contact() {
             contact:
           </h2>
           <div className="divider" />
-          <p style={{ marginBottom: 32, fontSize: 15 }}>
-            Aria works with finance ops leaders and engineering teams at
-            mid-market enterprises running modern ERPs. Contract or permanent,
-            remote or hybrid.
+          <p style={{ marginBottom: 16, fontSize: 15 }}>
+            Aria works with operations, finance, and trading teams at mid-market enterprises — any domain where AI decisions need to be right.
           </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <a
-              href="https://linkedin.com/in/miles-waite-46628a3b2"
-              target="_blank" rel="noopener noreferrer"
-              className="btn-outline"
-              style={{ display: 'inline-block', width: 'fit-content' }}
-            >
-              LinkedIn →
-            </a>
-            <span style={{ fontSize: 12, color: 'var(--dim)', fontFamily: 'var(--font-mono)' }}>
-              info@aria.ai
-            </span>
+          <p style={{ marginBottom: 36, fontSize: 15 }}>
+            Engagements start with a scoped 4–8 week pilot, evaluated against a golden dataset before production.
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+            <div>
+              <div style={{ fontSize: 11, color: 'var(--muted)', fontFamily: 'var(--font-mono)', letterSpacing: '0.08em', marginBottom: 6 }}>NAME</div>
+              <div style={{ fontSize: 16, color: 'var(--text)', fontWeight: 400 }}>Miles Waite</div>
+            </div>
+            <div>
+              <div style={{ fontSize: 11, color: 'var(--muted)', fontFamily: 'var(--font-mono)', letterSpacing: '0.08em', marginBottom: 8 }}>EMAIL</div>
+              <a
+                href="mailto:miles@aria.mileswaite.net"
+                style={{
+                  fontSize: 'clamp(18px, 2vw, 26px)',
+                  color: 'var(--text)',
+                  textDecoration: 'none',
+                  letterSpacing: '-0.03em',
+                  fontWeight: 400,
+                  borderBottom: '1px solid var(--border2)',
+                  paddingBottom: 2,
+                  lineHeight: 1.3,
+                }}
+              >
+                miles@aria.mileswaite.net
+              </a>
+            </div>
+            <div style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
+              <a
+                href="https://linkedin.com/in/miles-waite-46628a3b2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-muted"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/Milesy1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-muted"
+              >
+                GitHub
+              </a>
+            </div>
           </div>
         </FadeIn>
 

@@ -29,7 +29,7 @@ export default function OGImage() {
       </h1>
       <div style={{ width: 36, height: 1, background: '#c8c4bc', margin: '32px 0' }} />
       <p style={{ fontSize: 18, color: '#6b6860', fontWeight: 300, margin: 0 }}>
-        RAG · Agentic ERP · AP Automation · Fine-tuning
+        Enterprise Workflow Automation · RAG Intelligence · Agentic Systems
       </p>
     </div>
   );

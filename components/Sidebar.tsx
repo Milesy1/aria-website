@@ -5,14 +5,16 @@ import { useTheme } from './ThemeProvider';
 const links = [
   { href: '#hero', label: 'Home' },
   { href: '#capabilities', label: 'Capabilities' },
-  { href: '#ap-automation', label: 'AP Automation' },
+  { href: '#ap-automation', label: 'Enterprise Workflow Automation' },
   { href: '#rag', label: 'RAG Intelligence' },
-  { href: '#erp', label: 'Agentic ERP' },
-  { href: '#fine-tuning', label: 'Fine-tuning' },
+  { href: '#security', label: 'Security' },
+  { href: '#erp', label: 'Agentic Systems' },
   { href: '#how-we-build', label: 'How we build' },
   { href: '#results', label: 'Results' },
   { href: '#case-study', label: 'Case study' },
+  { href: '#faq', label: 'FAQ' },
   { href: '#about', label: 'About' },
+  { href: '#engagement', label: 'Engagement' },
 ];
 
 export default function Sidebar() {

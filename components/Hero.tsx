@@ -17,9 +17,9 @@ export default function Hero() {
       <span className="section-number">01</span>
 
       <FadeIn style={{ maxWidth: 720, position: 'relative' }}>
-        <p className="section-label" style={{ marginBottom: 32 }}>AI Engineering · Enterprise Finance</p>
+        <p className="section-label" style={{ marginBottom: 32 }}>AI Engineering</p>
 
-        <h1 style={{ marginBottom: 32, lineHeight: 1.1 }}>
+        <h1 style={{ marginBottom: 20, lineHeight: 1.1 }}>
           AI systems that work.<br />
           <span style={{ fontSize: 'clamp(24px, 3vw, 48px)', fontWeight: 300, color: 'var(--muted)' }}>
             <em style={{ fontStyle: 'italic' }}>AI systems that you can trust:</em>{' '}
@@ -27,17 +27,20 @@ export default function Hero() {
           </span>
         </h1>
 
+        <p style={{ fontSize: 16, maxWidth: 560, lineHeight: 1.7, marginBottom: 8, color: 'var(--text)', fontWeight: 400 }}>
+          Aria is an independent AI engineering practice — we design, build, and operate production AI systems for you.
+        </p>
+
         <div className="divider" />
 
         <div style={{ marginBottom: 28 }}>
           {[
-            { label: 'AP Automation', stat: '99% automation rate · 0% false positives' },
+            { label: 'Enterprise Workflow Automation', stat: '99% automation rate · 0% false positives' },
             { label: 'RAG Intelligence', stat: '9.1/10 RAGAS · 200+ users · sub-3s latency' },
-            { label: 'Agentic ERP', stat: '90+ tools · human-in-the-loop · full AP/AR cycle' },
-            { label: 'Fine-tuning', stat: 'domain-specific · eval-driven · CI-gated' },
+            { label: 'Agentic Systems', stat: '90+ tools · human-in-the-loop · full AP/AR cycle' },
           ].map(item => (
-            <div key={item.label} style={{ display: 'flex', alignItems: 'baseline', gap: 12, padding: '7px 0', borderBottom: '1px solid var(--border)' }}>
-              <span style={{ fontSize: 13, fontWeight: 500, color: 'var(--text)', minWidth: 140 }}>{item.label}</span>
+            <div key={item.label} style={{ display: 'flex', alignItems: 'baseline', gap: 12, flexWrap: 'wrap', padding: '7px 0', borderBottom: '1px solid var(--border)' }}>
+              <span style={{ fontSize: 13, fontWeight: 500, color: 'var(--text)' }}>{item.label}</span>
               <span style={{ fontSize: 11, color: 'var(--dim)', fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>{item.stat}</span>
             </div>
           ))}

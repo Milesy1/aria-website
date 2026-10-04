@@ -4,9 +4,9 @@ export default function Capabilities() {
   const caps = [
     {
       num: '01',
-      title: 'AP Automation',
-      desc: 'Self-learning non-PO invoice coding. RAG retrieval over historical coded lines, confidence gating, auto-post or human review, write-back loop into vector store. 99% automation rate on 1,000-invoice corpus.',
-      tags: ['RAG', 'Confidence gating', 'Write-back loop', 'Qdrant', 'FastAPI'],
+      title: 'Enterprise Workflow Automation',
+      desc: 'Flagship example: self-learning non-PO invoice coding. RAG retrieval over historical coded lines, confidence gating, auto-post or human review, write-back loop into vector store. 99% automation rate on 1,000-invoice corpus.',
+      tags: ['RAG', 'Confidence gating', 'Write-back loop', 'Fine-tuning', 'Qdrant', 'FastAPI'],
       href: '#ap-automation',
     },
     {
@@ -18,17 +18,10 @@ export default function Capabilities() {
     },
     {
       num: '03',
-      title: 'Agentic ERP Automation',
-      desc: 'Natural language over live ERP under mandatory human-in-the-loop governance. 90+ tools, semantic MDM duplicate detection, full AP/AR cycle. Governance enforced architecturally, not via prompts.',
-      tags: ['LangGraph', 'Tool-calling', 'HITL', 'Semantic MDM', 'Kubernetes'],
+      title: 'Agentic Systems',
+      desc: 'Natural language over live systems under mandatory human-in-the-loop governance. ERP is the primary example — 90+ tools, semantic MDM duplicate detection, full AP/AR cycle. Governance enforced architecturally, not via prompts.',
+      tags: ['LangGraph', 'Tool-calling', 'HITL', 'Fine-tuning', 'Semantic MDM', 'Kubernetes'],
       href: '#erp',
-    },
-    {
-      num: '04',
-      title: 'Model Fine-tuning',
-      desc: 'Domain-specific model training and eval-driven fine-tuning for finance and enterprise workflows. Custom judge evaluators, CI-gated release on golden datasets, trajectory evaluation across production sessions.',
-      tags: ['Fine-tuning', 'LLM-as-judge', 'Eval-driven', 'CI gating', 'Custom datasets'],
-      href: '#fine-tuning',
     },
   ];
 
@@ -39,7 +32,7 @@ export default function Capabilities() {
       <FadeIn>
         <p className="section-label">Capabilities</p>
         <h2 style={{ marginBottom: 16, maxWidth: 480 }}>
-          Four capabilities.<br />One engineering standard.
+          Three capabilities.<br />One engineering standard.
         </h2>
         <p style={{ marginBottom: 56, maxWidth: 480 }}>
           Every system Aria builds is evaluated against a golden dataset,

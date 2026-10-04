@@ -14,7 +14,7 @@ export default function About() {
 
   return (
     <section id="about" className="section">
-      <span className="section-number">09</span>
+      <span className="section-number">11</span>
       <p className="section-label">About</p>
 
       <div className="two-col">
@@ -25,9 +25,11 @@ export default function About() {
           </h2>
           <div className="divider" />
           <p style={{ marginBottom: 20 }}>
-            Aria is Miles Waite — AI engineer and systems architect with 20 years
-            of enterprise risk, trading systems, and real-time data infrastructure
-            across European energy trading desks.
+            Aria is Miles Waite — independent AI engineer.
+          </p>
+          <p style={{ marginBottom: 20 }}>
+            Twenty years across European energy trading, commodities, enterprise risk,
+            and real-time data infrastructure — before moving into AI engineering.
           </p>
           <p style={{ marginBottom: 20 }}>
             The systems on this site aren't prototypes. They serve 200+ active users,
@@ -35,10 +37,8 @@ export default function About() {
             frameworks audited across 103 production sessions.
           </p>
           <p>
-            That background — risk architecture, real-time systems, production
-            accountability — is why every Aria system is governed, observable,
-            and evaluated. It's not a methodology. It's how you build when
-            the stakes are real.
+            That background is why every Aria system is governed, observable,
+            and evaluated. It is how you build when a wrong answer costs real money.
           </p>
         </FadeIn>
 
