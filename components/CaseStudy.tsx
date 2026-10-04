@@ -32,7 +32,7 @@ export default function CaseStudy() {
 
         <FadeIn delay={120}>
           <p style={{ marginBottom: 16, fontSize: 14 }}>
-            The methodology was proven in finance operations. The same approach applies to any domain with structured historical decisions.
+            The Methodology was proven in finance operations. The same approach applies to any domain with structured historical decisions.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 1, background: 'var(--border)', border: '1px solid var(--border)', borderRadius: 8, overflow: 'hidden' }}>
             {[
@@ -63,4 +63,5 @@ export default function CaseStudy() {
     </section>
   );
 }
+
 
