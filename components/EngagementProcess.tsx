@@ -1,4 +1,5 @@
 import FadeIn from './FadeIn';
+import RoiCalculator from './RoiCalculator';
 
 const steps = [
   { num: '01', title: 'Discovery call', body: 'Your problem, your systems, honest go/no-go assessment.' },
@@ -21,6 +22,8 @@ export default function EngagementProcess() {
           Four steps. A pilot is evaluated before any production commitment.
         </p>
       </FadeIn>
+
+      <RoiCalculator />
 
       <FadeIn delay={80}>
         <div className="steps">

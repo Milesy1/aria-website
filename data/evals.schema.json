@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aria.mileswaite.net/schemas/evals.schema.json",
+  "$comment": "CI should overwrite data/evals.json on each gated release. Do not treat a hand-edited copy as the source of truth. The intended job is documented, and disabled, in .github/workflows/update-evals.yml. lastRun and releaseId are null until that job writes them.",
+  "title": "Published evaluation evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$comment", "releaseId", "lastRun", "ciGate", "scores", "reading"],
+  "properties": {
+    "$comment": { "type": "string" },
+    "releaseId": {
+      "type": ["string", "null"],
+      "description": "Release identifier from CI. Null until CI writes it. Do not invent one."
+    },
+    "lastRun": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "UTC date of the last gated eval run (YYYY-MM-DD). Null until CI writes it."
+    },
+    "ciGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "basis"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["pass", "fail"],
+          "description": "CI should set pass only when the release gate succeeded, and fail otherwise."
+        },
+        "basis": {
+          "type": "string",
+          "description": "One sentence a reviewer can check. CI should replace this with the gate that actually ran."
+        }
+      }
+    },
+    "scores": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label", "value", "detail", "system"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "value": { "type": "string" },
+          "detail": { "type": "string" },
+          "system": { "type": "string" }
+        }
+      }
+    },
+    "reading": {
+      "type": "array",
+      "description": "One line per term, written for a procurement reader. Keep in step with the scores CI writes.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["term", "line"],
+        "properties": {
+          "term": { "type": "string" },
+          "line": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -13,6 +13,9 @@ export default function Footer() {
         </span>
       </div>
       <div style={{ display: 'flex', gap: 20, alignItems: 'center', flexWrap: 'wrap' }}>
+        <a href="/evals" className="footer-link">
+          Evaluation results
+        </a>
         <a href="/privacy" className="footer-link">
           Privacy Policy
         </a>

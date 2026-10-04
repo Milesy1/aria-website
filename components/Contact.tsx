@@ -2,6 +2,9 @@
 import { useForm, ValidationError } from '@formspree/react';
 import FadeIn from './FadeIn';
 
+/** Placeholder scheduling URL — confirm or replace. */
+const BOOKING_URL = 'https://calendly.com/mileswaite-intro';
+
 export default function Contact() {
   const [state, handleSubmit] = useForm('mvkgerwz');
 
@@ -21,9 +24,19 @@ export default function Contact() {
           <p style={{ marginBottom: 16, fontSize: 15 }}>
             Aria works with operations, finance, and trading teams at mid-market enterprises — any domain where AI decisions need to be right.
           </p>
-          <p style={{ marginBottom: 36, fontSize: 15 }}>
+          <p style={{ marginBottom: 28, fontSize: 15 }}>
             Engagements start with a scoped 4–8 week pilot, evaluated against a golden dataset before production.
           </p>
+
+          <a
+            href={BOOKING_URL}
+            className="btn-primary"
+            style={{ width: 'fit-content', marginBottom: 28 }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book a 30-minute call
+          </a>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
             <div>
@@ -73,7 +86,7 @@ export default function Contact() {
           {state.succeeded ? (
             <div style={{ padding: '40px 0' }}>
               <p className="section-label" style={{ marginBottom: 12 }}>Message sent</p>
-              <p style={{ fontSize: 14 }}>Thanks — we'll be in touch shortly.</p>
+              <p style={{ fontSize: 14 }}>Thanks — we&apos;ll be in touch shortly.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>

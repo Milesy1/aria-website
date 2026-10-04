@@ -40,6 +40,9 @@ export default function Security() {
         <p>
           What leaves the tenancy, what stays isolated, and what is written down.
         </p>
+        <p>
+          Published scores — RAGAS, Recall@10, and gate.correct — are on the <a href="/evals" className="link-muted">evaluation results</a> page.
+        </p>
       </FadeIn>
 
       <FadeIn delay={80}>

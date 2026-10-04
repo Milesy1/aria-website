@@ -1,0 +1,60 @@
+{
+  "$comment": "Scores below are the figures currently published on the site. releaseId and lastRun are unknown — CI should overwrite this entire file on each gated release. See data/evals.schema.json and .github/workflows/update-evals.yml. Do not hand-edit scores to look newer than the last real run.",
+  "releaseId": null,
+  "lastRun": null,
+  "ciGate": {
+    "status": "pass",
+    "basis": "Published result, not a live CI badge: 1,213 Langfuse-scored decisions, all gate.correct = 1. CI should replace this status when it overwrites the file."
+  },
+  "scores": [
+    {
+      "id": "ragas",
+      "label": "RAGAS",
+      "value": "9.1/10",
+      "detail": "average",
+      "system": "RAG Intelligence"
+    },
+    {
+      "id": "recall-at-10",
+      "label": "Recall@10",
+      "value": "100%",
+      "detail": "correct GL code in the top 10 retrieved lines",
+      "system": "Invoice coding"
+    },
+    {
+      "id": "golden-dataset",
+      "label": "Golden dataset",
+      "value": "500+",
+      "detail": "confirmed invoice lines",
+      "system": "Invoice coding"
+    },
+    {
+      "id": "scored-decisions",
+      "label": "Scored decisions",
+      "value": "1,213",
+      "detail": "Langfuse-scored",
+      "system": "Invoice coding"
+    },
+    {
+      "id": "gate-correct",
+      "label": "gate.correct",
+      "value": "1",
+      "detail": "every scored decision",
+      "system": "Invoice coding"
+    }
+  ],
+  "reading": [
+    {
+      "term": "RAGAS",
+      "line": "A score out of 10 for whether the answer stays grounded in the text that was retrieved. The published average is 9.1. A RAG release below 9.0 does not ship."
+    },
+    {
+      "term": "Recall@10",
+      "line": "How often the correct GL code is among the 10 historical lines the retriever returned. 100% means it was in that top 10 on every line in the golden set."
+    },
+    {
+      "term": "gate.correct",
+      "line": "1 means the gate was right: an auto-posted code was correct, or an uncertain line was sent to a person. All 1,213 scored decisions are 1."
+    }
+  ]
+}

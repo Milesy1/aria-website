@@ -1,4 +1,5 @@
 import FadeIn from './FadeIn';
+import ConfidenceGate from './ConfidenceGate';
 
 export default function APAutomation() {
   const metrics = [
@@ -57,6 +58,8 @@ export default function APAutomation() {
           </div>
         </FadeIn>
       </div>
+
+      <ConfidenceGate />
     </section>
   );
 }

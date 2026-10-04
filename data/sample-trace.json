@@ -1,0 +1,65 @@
+{
+  "$comment": "PLACEHOLDER. Anonymized structure only. Vendor, description, amount, GL codes, and the 0.90 threshold are synthetic stand-ins, not a client's chart of accounts. Replace this file with a redacted real trace. The UI label is fixed: Anonymized and simplified from a real trace.",
+  "placeholder": true,
+  "label": "Anonymized and simplified from a real trace.",
+  "steps": [
+    {
+      "id": "retrieval-query",
+      "title": "Retrieval query",
+      "notice": "The query is built from the invoice line — vendor, description, amount, cost centre — not from a blank prompt.",
+      "fields": [
+        { "label": "Vendor", "value": "Sample Vendor A (synthetic)" },
+        { "label": "Description", "value": "Monthly platform subscription (synthetic)" },
+        { "label": "Amount", "value": "1,250.00 (synthetic)" },
+        { "label": "Cost centre", "value": "CC-100 (synthetic)" }
+      ]
+    },
+    {
+      "id": "retrieved-lines",
+      "title": "Top 3 retrieved lines",
+      "notice": "The model sees confirmed historical lines. Rank is what the retriever returned, not what the model wished were true.",
+      "fields": [
+        { "label": "1", "value": "Sample Vendor A — Platform subscription — GL 6100 — confirmed (synthetic)" },
+        { "label": "2", "value": "Sample Vendor A — Software licence — GL 6100 — confirmed (synthetic)" },
+        { "label": "3", "value": "Sample Vendor B — IT services — GL 6240 — confirmed (synthetic)" }
+      ]
+    },
+    {
+      "id": "prompt-summary",
+      "title": "Prompt summary",
+      "notice": "The model is asked to generalise from those confirmed lines and to return a code plus a confidence. It is not asked to memorise a rule.",
+      "fields": [
+        { "label": "Instruction", "value": "Propose one GL code and a confidence score from the retrieved confirmed lines. Include the reasoning. Do not propose a code none of the examples support. (Summary of the prompt, not the production template.)" }
+      ]
+    },
+    {
+      "id": "proposal",
+      "title": "Proposed code",
+      "notice": "0.94 is the model's confidence on this line. It is a proposal until the gate accepts it.",
+      "fields": [
+        { "label": "Proposed GL", "value": "6100 (synthetic)" },
+        { "label": "Confidence", "value": "0.94" }
+      ]
+    },
+    {
+      "id": "gate",
+      "title": "Gate decision",
+      "notice": "The gate decides the write, not the model. The 0.90 threshold is part of this simplified example, not a published production setting.",
+      "fields": [
+        { "label": "Confidence", "value": "0.94" },
+        { "label": "Example threshold", "value": "0.90 (synthetic)" },
+        { "label": "Decision", "value": "Auto-post — 0.94 is at or above the example threshold" }
+      ]
+    },
+    {
+      "id": "write-back",
+      "title": "Write-back confirmation",
+      "notice": "Only the confirmed code is written back. The corpus grows from a decision the gate accepted, not from the model's first guess.",
+      "fields": [
+        { "label": "Written GL", "value": "6100 (synthetic)" },
+        { "label": "Corpus", "value": "Appended to the tenant's confirmed lines (simplified)" },
+        { "label": "Trace", "value": "Retrieval, prompt, decision, and confidence recorded in Langfuse" }
+      ]
+    }
+  ]
+}

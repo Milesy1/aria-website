@@ -1,0 +1,53 @@
+# NON-FUNCTIONAL.
+# This workflow does not regenerate data/evals.json.
+# The job is disabled with `if: false`. The steps that would write the file are comments.
+# Uncomment and replace the echo only after a real eval gate exists.
+#
+# What CI should do on each gated release:
+# 1. Run the eval suite (RAGAS, Recall@10, gate.correct) against the golden dataset.
+# 2. If the gate fails, set ciGate.status to "fail" and do not publish the release.
+# 3. If the gate passes, overwrite data/evals.json to match data/evals.schema.json:
+#    - releaseId: the release that just gated
+#    - lastRun: UTC date YYYY-MM-DD
+#    - ciGate.status: "pass"
+#    - ciGate.basis: the check that actually ran, not a hand-written sentence
+#    - scores: the measured values, not hand-edited ones
+#    - reading: one line each for RAGAS, Recall@10, and gate.correct, updated if the definitions change
+# 4. Commit only data/evals.json and push it to the branch that deploys the site.
+#
+# Intended trigger, not active:
+#
+# on:
+#   workflow_run:
+#     workflows: ["Eval gate"]
+#     types: [completed]
+# jobs:
+#   update-evals:
+#     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Overwrite data/evals.json from the gated run
+#         run: |
+#           # Write the JSON here from the eval artifacts.
+#           # Do not hand-edit scores in the commit.
+#       - name: Commit the published evidence
+#         run: |
+#           git config user.name "aria-ci"
+#           git config user.email "miles@aria.mileswaite.net"
+#           git add data/evals.json
+#           git commit -m "Update published eval evidence" || echo "No changes"
+#           git push
+
+name: Update eval evidence (disabled)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-evals:
+    if: ${{ false }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Disabled
+        run: echo "Non-functional. See the comments in this file. This job does not write data/evals.json."

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Footer from '@/components/Footer';
+import { postBySlug } from '@/lib/posts';
 
 export const metadata: Metadata = {
   title: 'How we achieve 99% AP automation without professional services — Aria',
@@ -15,7 +17,10 @@ const shareLinks = [
 ];
 
 export default function APAutomationPost() {
+  const post = postBySlug('ap-automation');
+
   return (
+    <>
     <div style={{ maxWidth: 680, margin: '0 auto', padding: '80px 40px' }}>
 
       <Link href="/blog" style={{ fontSize: 12, color: 'var(--dim)', fontFamily: 'var(--font-mono)', textDecoration: 'none', letterSpacing: '0.06em' }}>
@@ -24,9 +29,9 @@ export default function APAutomationPost() {
 
       <div style={{ marginTop: 48, marginBottom: 56 }}>
         <div style={{ display: 'flex', gap: 16, marginBottom: 20 }}>
-          <span style={{ fontSize: 11, color: 'var(--dim)', fontFamily: 'var(--font-mono)' }}>3 October 2026</span>
+          <span style={{ fontSize: 11, color: 'var(--dim)', fontFamily: 'var(--font-mono)' }}>{post?.date}</span>
           <span style={{ fontSize: 11, color: 'var(--dim)', fontFamily: 'var(--font-mono)' }}>Aria</span>
-          <span style={{ fontSize: 11, color: 'var(--dim)', fontFamily: 'var(--font-mono)' }}>7 min read</span>
+          <span style={{ fontSize: 11, color: 'var(--dim)', fontFamily: 'var(--font-mono)' }}>{post?.readTime}</span>
         </div>
         <h1 style={{ fontSize: 'clamp(24px, 4vw, 36px)', lineHeight: 1.1, marginBottom: 0 }}>
           How we achieve 99% AP automation without professional services
@@ -61,7 +66,7 @@ export default function APAutomationPost() {
 
         <p>Gating thresholds are set per cost centre and vendor category, not globally. High-volume, stable vendor relationships operate at a lower confidence threshold — the system has more evidence to draw from. Novel vendors and ambiguous descriptions require higher confidence before auto-posting.</p>
 
-        <p>Below the threshold, the invoice is routed to human review with the system's proposed coding and its reasoning. The reviewer either confirms or corrects. Critically, 0% false positives means the system never auto-posts an incorrect code — all errors surface in the review queue.</p>
+        <p>Below the threshold, the invoice is routed to human review with the system&apos;s proposed coding and its reasoning. The reviewer either confirms or corrects. Critically, 0% false positives means the system never auto-posts an incorrect code — all errors surface in the review queue.</p>
 
         <h2>The write-back loop</h2>
 
@@ -87,7 +92,7 @@ export default function APAutomationPost() {
 
         <p>The write-back must be synchronous with the confirmation event, not batched. Delayed write-back means the system is learning from stale data.</p>
 
-        <p>Human review must be presented with the system's reasoning, not just its decision. Reviewers who understand why a code was proposed make better corrections, which produces better training signal.</p>
+        <p>Human review must be presented with the system&apos;s reasoning, not just its decision. Reviewers who understand why a code was proposed make better corrections, which produces better training signal.</p>
 
         <h2>Results</h2>
 
@@ -120,5 +125,7 @@ export default function APAutomationPost() {
         </Link>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }

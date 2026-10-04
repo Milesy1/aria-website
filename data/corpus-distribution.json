@@ -1,0 +1,13 @@
+{
+  "$comment": "PLACEHOLDER. These counts are not measured. Every bin is 100 so the slider has a shape to read and the arithmetic is easy to check. Replace every count with a real confidence export before quoting the percentages. A bin is auto-posted only when its lower bound is at or above the threshold; a bin that straddles the threshold counts as review.",
+  "placeholder": true,
+  "unit": "invoice lines",
+  "bins": [
+    { "min": 0.70, "max": 0.74, "count": 100 },
+    { "min": 0.75, "max": 0.79, "count": 100 },
+    { "min": 0.80, "max": 0.84, "count": 100 },
+    { "min": 0.85, "max": 0.89, "count": 100 },
+    { "min": 0.90, "max": 0.94, "count": 100 },
+    { "min": 0.95, "max": 0.99, "count": 100 }
+  ]
+}

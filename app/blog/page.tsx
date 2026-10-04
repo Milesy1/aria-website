@@ -1,21 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import { posts } from '@/lib/posts';
 
 export const metadata: Metadata = {
   title: 'Blog — Aria',
   description: 'Technical writing on production AI systems for finance operations and other domains where a wrong answer costs real money.',
-};
-
-const posts = [
-  {
-    slug: 'ap-automation',
-    title: 'How we achieve 99% AP automation without professional services',
-    date: '3 October 2026',
-    description: 'A technical account of how confidence gating, write-back loops, and hybrid retrieval produce a self-improving invoice coding system — without ongoing configuration or PS engagement.',
-    readTime: '7 min read',
+  alternates: {
+    types: {
+      'application/rss+xml': '/blog/rss.xml',
+    },
   },
-];
+};
 
 export default function BlogIndex() {
   return (
@@ -26,8 +22,11 @@ export default function BlogIndex() {
       </Link>
 
       <h1 style={{ marginTop: 48, marginBottom: 8, fontSize: 'clamp(28px, 4vw, 40px)' }}>Blog</h1>
-      <p style={{ color: 'var(--muted)', marginBottom: 64, fontSize: 14 }}>
+      <p style={{ color: 'var(--muted)', marginBottom: 12, fontSize: 14 }}>
         Technical writing on production AI systems — finance operations, and other domains where a wrong answer costs real money.
+      </p>
+      <p style={{ marginBottom: 64 }}>
+        <a href="/blog/rss.xml" className="link-muted">RSS</a>
       </p>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
